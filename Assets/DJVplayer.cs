@@ -5,8 +5,8 @@ using UnityEngine.Video;
 
 public class DJVplayer : MonoBehaviour
 {
-    public string[] videonames = new string[16];
-    public VideoClip[] videos = new VideoClip[16];
+    public string[] videonames = new string[4]; // 16 but just putting four for the sake of testing
+    public VideoClip[] videos = new VideoClip[4];
     private VideoPlayer vp;
     public GameObject cross;
     public GameObject UI;
@@ -17,65 +17,49 @@ public class DJVplayer : MonoBehaviour
 
     IEnumerator deja_vu_coroutine(string videoname)
     {
-        vp.clip = videos[index];
-        RenderSettings.skybox = skyboxMaterial;
-        vp.Prepare();
-        vp.Play();
-        yield return new WaitForSeconds(0.5f);
-    }
-
-    IEnumerator playNextVideo()
-    {
-        index += 1;
-        if (index < 16)
-        {
+        while (index < 4){
+            vp.clip = videos[index];
+            vp.Prepare();
+            yield return new WaitForSeconds(3f);
+            float time = (float) GetComponent<VideoPlayer>().clip.length;
+            RenderSettings.skybox = skyboxMaterial;
+            vp.Play();
+            yield return new WaitForSeconds(time);
+            // play dark screen
+            RenderSettings.skybox = (black);
+            // study phase: display crosshair image
+            if (condition == 0) {
+                cross.SetActive(true);
+                yield return new WaitForSeconds(5f);
+                cross.SetActive(false);
+            }
+            // test phase: display UI
+            else {
+                UI.SetActive(true);
+                yield return new WaitForSeconds(5f); // for UI things
+                UI.SetActive(false);
+            }
+              
+            index += 1;
             string nextvideo = videonames[index];
-            deja_vu_coroutine(nextvideo);
         }
-        else
-        {
-            // just to check to make sure thing ended
-            cross.SetActive(true);
-            yield return new WaitForSeconds(5f);
-            cross.SetActive(false);
-            //GO back to a home scene that would play the study phase
-            //switch scene //we’ll cover this later but you can use the scenemanager unity object from Unity.SceneManagement
-        }
+        // just to check to make sure thing ended
+        cross.SetActive(true);
+        yield return new WaitForSeconds(5f);
+        cross.SetActive(false);
+        //GO back to a home scene that would play the study phase
+        //switch scene //we’ll cover this later but you can use the scenemanager unity object from Unity.SceneManagement
     }
 
     // Start is called before the first frame update
     void Start()
     {   
         vp = GetComponent<VideoPlayer>();
-        vp.clip = videos[index];
-        RenderSettings.skybox = skyboxMaterial;
         StartCoroutine(deja_vu_coroutine(videonames[index]));
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (vp.isPaused) {
-            pause();
-            playNextVideo();
-        }
-    }
-
-    IEnumerator pause()
-    {
-        // study phase: play dark screen, crosshair image
-        if (condition == 0) {
-            RenderSettings.skybox = (black);
-            cross.SetActive(true);
-            yield return new WaitForSeconds(3);
-            cross.SetActive(false);
-        }
-        // test phase: play dark screen, display UI
-        else {
-            RenderSettings.skybox = (black);
-            UI.SetActive(true);
-            yield return new WaitForSeconds(3);
-            UI.SetActive(false);
-        }       
     }
 }
