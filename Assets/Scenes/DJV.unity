@@ -532,20 +532,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7eaf02bed1c88403d85dcaaaa2d944fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  videonames:
-  - 9TL
-  - 9SL
-  - 1SL_
-  - 16SL
-  videos:
-  - {fileID: 32900000, guid: 24f2261b633af4c23bb4e1a8854f2f2a, type: 3}
-  - {fileID: 32900000, guid: fba63a8cf3ab14c35b50fbafcded19e3, type: 3}
-  - {fileID: 32900000, guid: 581b8f47c888a496cb2ce0cb09ddb232, type: 3}
-  - {fileID: 32900000, guid: f0026f0656ab04fbeaa05696f6d189d1, type: 3}
-  cross: {fileID: 2091088254}
-  UI: {fileID: 1805035272}
   skyboxMaterial: {fileID: 2100000, guid: 6a2ca9c7af6424a419ce38f733ef4027, type: 2}
   black: {fileID: 2100000, guid: 91c93233f76084157b830d2afd7da04a, type: 2}
+  videonames:
+  - 
+  - 
+  - 
+  - 
+  videos:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  studyvideonames:
+  - 1SL_
+  - 9SL
+  - 9TL
+  - 16SL
+  studyvideos:
+  - {fileID: 32900000, guid: 581b8f47c888a496cb2ce0cb09ddb232, type: 3}
+  - {fileID: 32900000, guid: fba63a8cf3ab14c35b50fbafcded19e3, type: 3}
+  - {fileID: 32900000, guid: 24f2261b633af4c23bb4e1a8854f2f2a, type: 3}
+  - {fileID: 32900000, guid: f0026f0656ab04fbeaa05696f6d189d1, type: 3}
+  cross: {fileID: 2091088254}
+  testvideonames:
+  - 
+  - 
+  - 
+  - 
+  testvideos:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  UI: {fileID: 1805035272}
   condition: 0
 --- !u!328 &1359985952
 VideoPlayer:

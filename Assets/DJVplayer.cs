@@ -5,19 +5,30 @@ using UnityEngine.Video;
 
 public class DJVplayer : MonoBehaviour
 {
-    public string[] videonames = new string[4]; // 16 but just putting four for the sake of testing
-    public VideoClip[] videos = new VideoClip[4];
+    private static int n = 4; // number of video clips, 16 but putting 4 for the sake of testing
     private VideoPlayer vp;
-    public GameObject cross;
-    public GameObject UI;
     private int index = 0;
     public Material skyboxMaterial;
     public Material black;
+    public string[] videonames = new string[n];
+    public VideoClip[] videos = new VideoClip[n];
+
+    // study variables
+    public string[] studyvideonames = new string[n];
+    public VideoClip[] studyvideos = new VideoClip[n];
+    public GameObject cross;
+
+    // test variables
+    public string[] testvideonames = new string[n];
+    public VideoClip[] testvideos = new VideoClip[n];
+    public GameObject UI;
+
     public int condition = 0; // if 0, load study, if 1, load test
 
     IEnumerator deja_vu_coroutine(string videoname)
     {
-        while (index < 4){
+        while (index < n){ 
+            string nextvideo = videonames[index];
             vp.clip = videos[index];
             vp.Prepare();
             yield return new WaitForSeconds(3f);
@@ -41,7 +52,6 @@ public class DJVplayer : MonoBehaviour
             }
               
             index += 1;
-            string nextvideo = videonames[index];
         }
         // just to check to make sure thing ended
         cross.SetActive(true);
@@ -51,10 +61,24 @@ public class DJVplayer : MonoBehaviour
         //switch scene //we’ll cover this later but you can use the scenemanager unity object from Unity.SceneManagement
     }
 
+    void load()
+    {
+        if (condition == 0) { // load study
+            videonames = studyvideonames;
+            videos = studyvideos;
+        }
+        else { // load test
+            videonames = testvideonames;
+            videos = testvideos;
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {   
+        load();
         vp = GetComponent<VideoPlayer>();
+        
         StartCoroutine(deja_vu_coroutine(videonames[index]));
     }
 
