@@ -21,12 +21,14 @@ public class DJVplayer : MonoBehaviour
     public GameObject cross;
 
     // test variables
-    public string[] testvideonames = new string[2*n];
-    public VideoClip[] testvideos = new VideoClip[2*n];
+    public string[] testvideonames = new string[n];
+    public VideoClip[] testvideos = new VideoClip[n];
     public GameObject UI;
 
     public int condition = 0; // if 0, load study, if 1, load test
 
+    // to do:
+    // does the test phase have a participant's block after every video or after every other video?
     IEnumerator deja_vu_coroutine(string videoname)
     {
         while (index < n){ 
@@ -70,8 +72,22 @@ public class DJVplayer : MonoBehaviour
             videos = studyvideos;
         }
         else { // load test
-            videonames = testvideonames;
-            videos = testvideos;
+            videonames = new string[2*n];
+            videos = new VideoClip[2*n];
+            // videonames = testvideonames;
+            // videos = testvideos;
+            
+            // following code is under the assumption that the study videos is the novel scenes and test videos are the spatially similar scene? 
+            int i = 0;
+            // fill array with study and test videos
+            while (i < 2*n) {
+                videonames[i] = studyvideonames[i];
+                videos[i] = studyvideos[i];
+                i++;
+                videonames[i] = testvideonames[i];
+                videos[i] = testvideos[i];
+                i++;
+            }
         }
     }
 
