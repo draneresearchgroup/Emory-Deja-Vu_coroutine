@@ -29,6 +29,49 @@ public class DJVplayer : MonoBehaviour
 
     // to do:
     // does the test phase have a participant's block after every video or after every other video?
+    // Yes the test phase will have a paerticipant response after each video
+
+
+    //Great work! Here are my suggestions:
+
+    /* 
+    *** Consolidate coroutine and use parameter values***
+    -> deja_vu_coroutine(int index_of_video, int index_of_video_name )
+            ->set video from the passed parameter
+            ->run video
+            -> set cross hair
+            ->move static trial_index up (trial++)
+            ->OnTrialEnd() run a method that switches the videos
+        //This coroutine runs one video, shows cross hair, and exits
+        //You can call this coroutine in both the study and the test phase
+     */
+
+     /*
+    *** Use a Method to Manage the Study and Test Blocks ***
+
+    // OnTrialEnd()
+            //if(condition is study) 
+            {
+                 if(trial_index < trial_nums) -> startcoroutine(deja_vu_coroutine) //for study
+
+                 else
+                    switch to test block
+            }
+            else if(condition is test)
+            {
+               run the UI
+                 if(trial_index < trial_nums) -> startcoroutine(deja_vu_coroutine) //for test
+                 else
+                    end game
+            }
+
+            
+     */
+
+
+
+
+
     IEnumerator deja_vu_coroutine(string videoname)
     {
         while (index < n){ 
@@ -100,8 +143,5 @@ public class DJVplayer : MonoBehaviour
         StartCoroutine(deja_vu_coroutine(videonames[index]));
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-    }
+   
 }
