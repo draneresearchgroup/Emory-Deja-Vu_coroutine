@@ -27,9 +27,6 @@ public class DJVplayer : MonoBehaviour
 
     public int condition = 0; // if 0, load study, if 1, load test
 
-    // to do:
-    // does the test phase have a participant's block after every video or after every other video?
-    // Yes the test phase will have a paerticipant response after each video
 
 
     //Great work! Here are my suggestions:
@@ -72,40 +69,67 @@ public class DJVplayer : MonoBehaviour
 
 
 
-    IEnumerator deja_vu_coroutine(string videoname)
+    IEnumerator deja_vu_coroutine(int curr_index)
     {
-        while (index < n){ 
-            string nextvideo = videonames[index];
-            vp.clip = videos[index];
-            vp.Prepare();
-            yield return new WaitForSeconds(3f);
-            float time = (float) GetComponent<VideoPlayer>().clip.length;
-            RenderSettings.skybox = skyboxMaterial;
-            vp.Play();
-            yield return new WaitForSeconds(time);
-            // play dark screen
-            RenderSettings.skybox = (black);
-            // study phase: display crosshair image
-            if (condition == 0) {
+        string videoname = videonames[curr_index];
+        vp.clip = videos[curr_index];
+        vp.Prepare();
+        yield return new WaitForSeconds(3f);
+        float time = (float) GetComponent<VideoPlayer>().clip.length;
+        RenderSettings.skybox = skyboxMaterial;
+        vp.Play();
+        yield return new WaitForSeconds(time);
+        // play dark screen
+        RenderSettings.skybox = (black);
+            
+        index++;
+        // display crosshair image
+        cross.SetActive(true);
+        yield return new WaitForSeconds(3f);
+        cross.SetActive(false);
+        
+        // trial block ends
+        OnTrialEnd();
+    
+    }
+
+    IEnumerator OnTrialEnd(){
+        // for study phase — continue trials
+        if (condition == 0) 
+        {
+            if(index < n) {
+                StartCoroutine(deja_vu_coroutine(index));
+            }
+
+            else {
+                // switch to test block
+                // temporary check to make sure thing ended
                 cross.SetActive(true);
-                yield return new WaitForSeconds(3f);
+                yield return new WaitForSeconds(5f);
                 cross.SetActive(false);
             }
-            // test phase: display UI
-            else {
-                UI.SetActive(true);
-                yield return new WaitForSeconds(3f); // for UI things
-                UI.SetActive(false);
-            }
-              
-            index += 1;
         }
-        // just to check to make sure thing ended
-        cross.SetActive(true);
-        yield return new WaitForSeconds(5f);
-        cross.SetActive(false);
-        //GO back to a home scene that would play the study phase
-        //switch scene //we’ll cover this later but you can use the scenemanager unity object from Unity.SceneManagement
+        // for test phase
+        else
+        {
+            //run the UI
+            UI.SetActive(true);
+            yield return new WaitForSeconds(3f); // for UI things
+            UI.SetActive(false);
+            if(index < n) {
+                StartCoroutine(deja_vu_coroutine(index));
+            }
+
+            else {
+                // end game
+                // just to check to make sure thing ended
+                cross.SetActive(true);
+                yield return new WaitForSeconds(5f);
+                cross.SetActive(false);
+                //GO back to a home scene that would play the study phase
+                //switch scene //we’ll cover this later but you can use the scenemanager unity object from Unity.SceneManagement
+            }
+        }
     }
 
     void load()
@@ -140,7 +164,7 @@ public class DJVplayer : MonoBehaviour
         load();
         vp = GetComponent<VideoPlayer>();
         
-        StartCoroutine(deja_vu_coroutine(videonames[index]));
+        StartCoroutine(deja_vu_coroutine(index));
     }
 
    
