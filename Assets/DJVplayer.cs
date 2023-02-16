@@ -5,6 +5,7 @@ using UnityEngine.Video;
 
 public class DJVplayer : MonoBehaviour
 {
+    
     // study phase:  show video, play audio, display ISI cross-hair, then move to next video.
     // test phase: show video (no audio), participant response block (UI), then move to next video
 
@@ -27,6 +28,8 @@ public class DJVplayer : MonoBehaviour
 
     public int condition = 0; // if 0, load study, if 1, load test
 
+    // to do: fix things
+    // dynamic frame adjustment: https://docs.unity3d.com/Manual/DynamicResolution.html
 
 
     //Great work! Here are my suggestions:
@@ -77,8 +80,10 @@ public class DJVplayer : MonoBehaviour
         yield return new WaitForSeconds(3f);
         float time = (float) GetComponent<VideoPlayer>().clip.length;
         RenderSettings.skybox = skyboxMaterial;
+        Debug.Log("Video loaded, now playing:  " + videoname);
         vp.Play();
         yield return new WaitForSeconds(time);
+        Debug.Log("Video finished playing");
         // play dark screen
         RenderSettings.skybox = (black);
             
@@ -95,14 +100,18 @@ public class DJVplayer : MonoBehaviour
 
     IEnumerator OnTrialEnd(){
         // for study phase — continue trials
+        Debug.Log("OnTrialEnd reached");
         if (condition == 0) 
-        {
+        {   
             if(index < n) {
-                StartCoroutine(deja_vu_coroutine(index));
+                Debug.Log("Loading new video...");
+                deja_vu_coroutine(index);
             }
 
             else {
                 // switch to test block
+                condition = 1;
+                // start test block???
                 // temporary check to make sure thing ended
                 cross.SetActive(true);
                 yield return new WaitForSeconds(5f);
@@ -117,7 +126,7 @@ public class DJVplayer : MonoBehaviour
             yield return new WaitForSeconds(3f); // for UI things
             UI.SetActive(false);
             if(index < n) {
-                StartCoroutine(deja_vu_coroutine(index));
+                deja_vu_coroutine(index);
             }
 
             else {
