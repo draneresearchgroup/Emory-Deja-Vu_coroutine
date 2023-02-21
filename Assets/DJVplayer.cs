@@ -16,6 +16,9 @@ public class DJVplayer : MonoBehaviour
     public Material black;
     public string[] videonames;
     public VideoClip[] videos;
+    public int frames = 30; // frame rate to change dynamically
+
+
     // study variables
     public string[] studyvideonames = new string[n];
     public VideoClip[] studyvideos = new VideoClip[n];
@@ -29,7 +32,6 @@ public class DJVplayer : MonoBehaviour
     public int condition = 0; // if 0, load study, if 1, load test
 
     // to do: fix things
-    // dynamic frame adjustment: https://docs.unity3d.com/Manual/DynamicResolution.html
 
 
     //Great work! Here are my suggestions:
@@ -69,9 +71,6 @@ public class DJVplayer : MonoBehaviour
      */
 
 
-
-
-
     IEnumerator deja_vu_coroutine(int curr_index)
     {
         string videoname = videonames[curr_index];
@@ -103,6 +102,7 @@ public class DJVplayer : MonoBehaviour
         Debug.Log("OnTrialEnd reached");
         if (condition == 0) 
         {   
+            Debug.Log(index);
             if(index < n) {
                 Debug.Log("Loading new video...");
                 deja_vu_coroutine(index);
@@ -120,7 +120,7 @@ public class DJVplayer : MonoBehaviour
         }
         // for test phase
         else
-        {
+        {   
             //run the UI
             UI.SetActive(true);
             yield return new WaitForSeconds(3f); // for UI things
@@ -176,5 +176,7 @@ public class DJVplayer : MonoBehaviour
         StartCoroutine(deja_vu_coroutine(index));
     }
 
-   
+   void Update()
+   {
+   }
 }
