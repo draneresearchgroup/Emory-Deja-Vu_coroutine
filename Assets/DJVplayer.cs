@@ -32,6 +32,7 @@ public class DJVplayer : MonoBehaviour
     public int condition = 0; // if 0, load study, if 1, load test
 
     // to do: fix things
+    // dynamic framerate fixing: https://docs.unity3d.com/ScriptReference/Application-targetFrameRate.html
 
 
     //Great work! Here are my suggestions:
