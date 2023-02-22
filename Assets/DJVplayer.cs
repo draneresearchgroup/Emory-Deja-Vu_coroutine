@@ -71,6 +71,15 @@ public class DJVplayer : MonoBehaviour
             
      */
 
+    // mock end function just to make sure the end of the videos is reached
+
+    IEnumerator end()
+    {
+        cross.SetActive(true);
+        yield return new WaitForSeconds(5f);
+        cross.SetActive(false);
+    }
+
 
     IEnumerator deja_vu_coroutine(int curr_index)
     {
@@ -105,15 +114,14 @@ public class DJVplayer : MonoBehaviour
         {   
             if(index < n) {
                 Debug.Log("Loading new video...");
-                // deja_vu_coroutine(index);
+                deja_vu_coroutine(index);
             }
 
             else {
                 // switch to test block
                 condition = 1;
                 // start test block???
-                // temporary check to make sure thing ended
-                cross.SetActive(true);
+                end();
             }
         }
         // for test phase
@@ -123,13 +131,12 @@ public class DJVplayer : MonoBehaviour
             UI.SetActive(true);
             UI.SetActive(false);
             if(index < n) {
-                // deja_vu_coroutine(index);
+                deja_vu_coroutine(index);
             }
 
             else {
                 // end game
-                // just to check to make sure thing ended
-                cross.SetActive(true);
+                end();
                 //GO back to a home scene that would play the study phase
                 //switch scene //we’ll cover this later but you can use the scenemanager unity object from Unity.SceneManagement
             }
