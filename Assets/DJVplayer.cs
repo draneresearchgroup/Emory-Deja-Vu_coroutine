@@ -31,7 +31,7 @@ public class DJVplayer : MonoBehaviour
 
     public int condition = 0; // if 0, load study, if 1, load test
 
-    // to do: fix things
+    // to do: OH MY GOD THINGS ARE FIXED
     // dynamic framerate fixing: https://docs.unity3d.com/ScriptReference/Application-targetFrameRate.html
 
 
@@ -114,7 +114,7 @@ public class DJVplayer : MonoBehaviour
         {   
             if(index < n) {
                 Debug.Log("Loading new video...");
-                deja_vu_coroutine(index);
+                StartCoroutine(deja_vu_coroutine(index));
             }
 
             else {
@@ -131,7 +131,7 @@ public class DJVplayer : MonoBehaviour
             UI.SetActive(true);
             UI.SetActive(false);
             if(index < n) {
-                deja_vu_coroutine(index);
+                StartCoroutine(deja_vu_coroutine(index));
             }
 
             else {
