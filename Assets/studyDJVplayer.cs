@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Video;
 
-public class DJVplayer : MonoBehaviour
+public class studyDJVplayer : MonoBehaviour
 {
     
     // study phase:  show video, play audio, display ISI cross-hair, then move to next video.
-    // test phase: show video (no audio), participant response block (UI), then move to next video
 
     private static int n = 4; // number of video clips, 16 but putting 4 for the sake of testing
     private VideoPlayer vp;
@@ -24,12 +23,6 @@ public class DJVplayer : MonoBehaviour
     public VideoClip[] studyvideos = new VideoClip[n];
     public GameObject cross;
 
-    // test variables
-    public string[] testvideonames = new string[n];
-    public VideoClip[] testvideos = new VideoClip[n];
-    public GameObject UI;
-
-    public int condition = 0; // if 0, load study, if 1, load test
 
     // to do: OH MY GOD THINGS ARE FIXED
     // dynamic framerate fixing: https://docs.unity3d.com/ScriptReference/Application-targetFrameRate.html
@@ -110,63 +103,23 @@ public class DJVplayer : MonoBehaviour
     void OnTrialEnd(){
         // for study phase — continue trials
         Debug.Log("OnTrialEnd reached");
-        if (condition == 0) 
-        {   
-            if(index < n) {
-                Debug.Log("Loading new video...");
-                StartCoroutine(deja_vu_coroutine(index));
-            }
-
-            else {
-                // switch to test block
-                condition = 1;
-                // start test block???
-                end();
-            }
+        if(index < n) {
+            Debug.Log("Loading new video...");
+            StartCoroutine(deja_vu_coroutine(index));
         }
-        // for test phase
-        else
-        {   
-            //run the UI
-            UI.SetActive(true);
-            UI.SetActive(false);
-            if(index < n) {
-                StartCoroutine(deja_vu_coroutine(index));
-            }
 
-            else {
-                // end game
-                end();
-                //GO back to a home scene that would play the study phase
-                //switch scene //we’ll cover this later but you can use the scenemanager unity object from Unity.SceneManagement
-            }
-        }    
+        else {
+            // end game
+            end();
+            //GO back to a home scene that would play the study phase
+            //switch scene //we’ll cover this later but you can use the scenemanager unity object from Unity.SceneManagement
+        }
     }
 
     void load()
     {
-        if (condition == 0) { // load study
-            videonames = studyvideonames;
-            videos = studyvideos;
-        }
-        else { // load test
-            videonames = new string[2*n];
-            videos = new VideoClip[2*n];
-            // videonames = testvideonames;
-            // videos = testvideos;
-            
-            // following code is under the assumption that the study videos is the novel scenes and test videos are the spatially similar scene? 
-            int i = 0;
-            // fill array with study and test videos
-            while (i < 2*n) {
-                videonames[i] = studyvideonames[i];
-                videos[i] = studyvideos[i];
-                i++;
-                videonames[i] = testvideonames[i];
-                videos[i] = testvideos[i];
-                i++;
-            }
-        }
+        videonames = studyvideonames;
+        videos = studyvideos;
     }
 
     // Start is called before the first frame update

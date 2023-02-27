@@ -499,7 +499,7 @@ GameObject:
   - component: {fileID: 1359985950}
   - component: {fileID: 1359985952}
   m_Layer: 0
-  m_Name: VP
+  m_Name: studyVP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -544,6 +544,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  frames: 30
   studyvideonames:
   - 1SL_
   - 9SL
@@ -555,18 +556,6 @@ MonoBehaviour:
   - {fileID: 32900000, guid: 24f2261b633af4c23bb4e1a8854f2f2a, type: 3}
   - {fileID: 32900000, guid: f0026f0656ab04fbeaa05696f6d189d1, type: 3}
   cross: {fileID: 2091088254}
-  testvideonames:
-  - 
-  - 
-  - 
-  - 
-  testvideos:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  UI: {fileID: 1805035272}
-  condition: 0
 --- !u!328 &1359985952
 VideoPlayer:
   m_ObjectHideFlags: 0
