@@ -96,5 +96,7 @@ public class testDJVplayer : MonoBehaviour
 
    void Update()
    {
+        Application.targetFrameRate = frames;
+        Debug.Log("Frames: " + Application.targetFrameRate);
    }
 }

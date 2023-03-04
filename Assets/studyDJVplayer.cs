@@ -109,7 +109,7 @@ public class studyDJVplayer : MonoBehaviour
         }
 
         else {
-            // end game
+            // end game / start test module?
             end();
             //GO back to a home scene that would play the study phase
             //switch scene //we’ll cover this later but you can use the scenemanager unity object from Unity.SceneManagement
@@ -133,5 +133,7 @@ public class studyDJVplayer : MonoBehaviour
 
    void Update()
    {
+        Application.targetFrameRate = frames;
+        Debug.Log("Frames: " + Application.targetFrameRate);
    }
 }
