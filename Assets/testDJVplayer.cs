@@ -66,16 +66,19 @@ public class testDJVplayer : MonoBehaviour
         Debug.Log("OnTrialEnd reached");
         //run the UI
         UI.SetActive(true);
-        UI.SetActive(false);
-        if(index < n) {
-            StartCoroutine(deja_vu_coroutine(index));
+        // general check to make sure participant is done with UI / key pressing
+        if (Input.GetKeyDown(KeyCode.Space) == true) {
+            UI.SetActive(false);
+            if(index < n) {
+                StartCoroutine(deja_vu_coroutine(index));
+            }
+            else {
+                // end game
+                end();
+                //GO back to a home scene that would play the study phase
+                //switch scene //we’ll cover this later but you can use the scenemanager unity object from Unity.SceneManagement
+            }    
         }
-        else {
-            // end game
-            end();
-            //GO back to a home scene that would play the study phase
-            //switch scene //we’ll cover this later but you can use the scenemanager unity object from Unity.SceneManagement
-        }    
     }
 
     void load()
@@ -97,6 +100,6 @@ public class testDJVplayer : MonoBehaviour
    void Update()
    {
         Application.targetFrameRate = frames;
-        Debug.Log("Frames: " + Application.targetFrameRate);
+        // Debug.Log("Frames: " + Application.targetFrameRate);
    }
 }

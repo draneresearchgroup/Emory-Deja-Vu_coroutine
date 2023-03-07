@@ -24,7 +24,7 @@ public class studyDJVplayer : MonoBehaviour
     public GameObject cross;
 
 
-    // to do: OH MY GOD THINGS ARE FIXED
+    // to do:
     // dynamic framerate fixing: https://docs.unity3d.com/ScriptReference/Application-targetFrameRate.html
 
 
@@ -109,7 +109,7 @@ public class studyDJVplayer : MonoBehaviour
         }
 
         else {
-            // end game / start test module?
+            // end game 
             end();
             //GO back to a home scene that would play the study phase
             //switch scene //we’ll cover this later but you can use the scenemanager unity object from Unity.SceneManagement
