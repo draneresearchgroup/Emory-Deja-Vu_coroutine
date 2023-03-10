@@ -25,6 +25,7 @@ public class testDJVplayer : MonoBehaviour
     public GameObject UI;
 
 
+
     // to do: OH MY GOD THINGS ARE FIXED
     // dynamic framerate fixing: https://docs.unity3d.com/ScriptReference/Application-targetFrameRate.html
 
@@ -56,6 +57,11 @@ public class testDJVplayer : MonoBehaviour
         cross.SetActive(true);
         yield return new WaitForSeconds(3f);
         cross.SetActive(false);
+
+        // test phase: run UI (mock)
+        UI.SetActive(true);
+        yield return new WaitForSeconds(5f);
+        UI.SetActive(false);
         
         // trial block ends
         OnTrialEnd();
@@ -64,21 +70,15 @@ public class testDJVplayer : MonoBehaviour
 
     void OnTrialEnd(){
         Debug.Log("OnTrialEnd reached");
-        //run the UI
-        UI.SetActive(true);
-        // general check to make sure participant is done with UI / key pressing
-        if (Input.GetKeyDown(KeyCode.Space) == true) {
-            UI.SetActive(false);
-            if(index < n) {
-                StartCoroutine(deja_vu_coroutine(index));
-            }
-            else {
-                // end game
-                end();
-                //GO back to a home scene that would play the study phase
-                //switch scene //we’ll cover this later but you can use the scenemanager unity object from Unity.SceneManagement
-            }    
+        if(index < n) {
+            StartCoroutine(deja_vu_coroutine(index));
         }
+        else {
+            // end game
+            end();
+            //GO back to a home scene that would play the study phase
+            //switch scene //we’ll cover this later but you can use the scenemanager unity object from Unity.SceneManagement
+        }    
     }
 
     void load()
@@ -91,6 +91,8 @@ public class testDJVplayer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {   
+        UI.SetActive(false);
+        cross.SetActive(false);
         load();
         vp = GetComponent<VideoPlayer>();
         

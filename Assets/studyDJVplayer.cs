@@ -125,6 +125,7 @@ public class studyDJVplayer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {   
+        cross.SetActive(false);
         load();
         vp = GetComponent<VideoPlayer>();
         
