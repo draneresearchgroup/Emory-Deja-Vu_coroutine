@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Video;
+using Unity.SceneManagement;
 
 public class studyDJVplayer : MonoBehaviour
 {
@@ -22,11 +23,6 @@ public class studyDJVplayer : MonoBehaviour
     public string[] studyvideonames = new string[n];
     public VideoClip[] studyvideos = new VideoClip[n];
     public GameObject cross;
-
-
-    // to do:
-    // dynamic framerate fixing: https://docs.unity3d.com/ScriptReference/Application-targetFrameRate.html
-
 
     //Great work! Here are my suggestions:
 
@@ -135,6 +131,5 @@ public class studyDJVplayer : MonoBehaviour
    void Update()
    {
         Application.targetFrameRate = frames;
-        // Debug.Log("Frames: " + Application.targetFrameRate);
    }
 }

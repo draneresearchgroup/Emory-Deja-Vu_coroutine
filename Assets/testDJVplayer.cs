@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Video;
+using Unity.SceneManagement;
 
 public class testDJVplayer : MonoBehaviour
 {
@@ -102,6 +103,5 @@ public class testDJVplayer : MonoBehaviour
    void Update()
    {
         Application.targetFrameRate = frames;
-        // Debug.Log("Frames: " + Application.targetFrameRate);
    }
 }

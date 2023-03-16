@@ -353,6 +353,7 @@ GameObject:
   - component: {fileID: 1359985949}
   - component: {fileID: 1359985950}
   - component: {fileID: 1359985952}
+  - component: {fileID: 1359985953}
   m_Layer: 0
   m_Name: studyVP
   m_TagString: Untagged
@@ -446,6 +447,19 @@ VideoPlayer:
   m_WaitForFirstFrame: 1
   m_FrameReadyEventEnabled: 0
   m_VideoShaders: []
+--- !u!114 &1359985953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1359985947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8324dd07104064eeaa79d5ca58142955, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deltaTime: 0
 --- !u!1 &1858785399
 GameObject:
   m_ObjectHideFlags: 0
