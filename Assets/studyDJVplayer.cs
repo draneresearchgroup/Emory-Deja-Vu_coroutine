@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Video;
-// using Unity.SceneManagement;
+using UnityEngine.SceneManagement;  //uncommented scene management package
 
 public class studyDJVplayer : MonoBehaviour
 {
@@ -109,6 +109,7 @@ public class studyDJVplayer : MonoBehaviour
             end();
             //GO back to a home scene that would play the study phase
             //switch scene //we’ll cover this later but you can use the scenemanager unity object from Unity.SceneManagement
+            SceneManager.LoadScene("DJVTest");
         }
     }
 
