@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Video;
-// using Unity.SceneManagement;
+using UnityEngine.SceneManagement;
 
 public class testDJVplayer : MonoBehaviour
 {
@@ -24,19 +24,6 @@ public class testDJVplayer : MonoBehaviour
     public string[] testvideonames = new string[n];
     public VideoClip[] testvideos = new VideoClip[n];
     public GameObject UI;
-
-
-
-    // to do: OH MY GOD THINGS ARE FIXED
-    // dynamic framerate fixing: https://docs.unity3d.com/ScriptReference/Application-targetFrameRate.html
-
-    IEnumerator end()
-    {
-        cross.SetActive(true);
-        yield return new WaitForSeconds(5f);
-        cross.SetActive(false);
-    }
-
 
     IEnumerator deja_vu_coroutine(int curr_index)
     {
@@ -75,10 +62,8 @@ public class testDJVplayer : MonoBehaviour
             StartCoroutine(deja_vu_coroutine(index));
         }
         else {
-            // end game
-            end();
-            //GO back to a home scene that would play the study phase
-            //switch scene //we’ll cover this later but you can use the scenemanager unity object from Unity.SceneManagement
+            // switch to end scene
+            SceneManager.LoadScene("endScene");
         }    
     }
 
