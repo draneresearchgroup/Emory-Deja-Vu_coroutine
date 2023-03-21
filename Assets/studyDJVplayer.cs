@@ -24,51 +24,6 @@ public class studyDJVplayer : MonoBehaviour
     public VideoClip[] studyvideos = new VideoClip[n];
     public GameObject cross;
 
-    //Great work! Here are my suggestions:
-
-    /* 
-    *** Consolidate coroutine and use parameter values***
-    -> deja_vu_coroutine(int index_of_video, int index_of_video_name )
-            ->set video from the passed parameter
-            ->run video
-            -> set cross hair
-            ->move static trial_index up (trial++)
-            ->OnTrialEnd() run a method that switches the videos
-        //This coroutine runs one video, shows cross hair, and exits
-        //You can call this coroutine in both the study and the test phase
-     */
-
-     /*
-    *** Use a Method to Manage the Study and Test Blocks ***
-
-    // OnTrialEnd()
-            //if(condition is study) 
-            {
-                 if(trial_index < trial_nums) -> startcoroutine(deja_vu_coroutine) //for study
-
-                 else
-                    switch to test block
-            }
-            else if(condition is test)
-            {
-               run the UI
-                 if(trial_index < trial_nums) -> startcoroutine(deja_vu_coroutine) //for test
-                 else
-                    end game
-            }
-
-            
-     */
-
-    // mock end function just to make sure the end of the videos is reached
-
-    IEnumerator end()
-    {
-        cross.SetActive(true);
-        yield return new WaitForSeconds(5f);
-        cross.SetActive(false);
-    }
-
 
     IEnumerator deja_vu_coroutine(int curr_index)
     {
@@ -105,10 +60,7 @@ public class studyDJVplayer : MonoBehaviour
         }
 
         else {
-            // end game 
-            end();
-            //GO back to a home scene that would play the study phase
-            //switch scene //we’ll cover this later but you can use the scenemanager unity object from Unity.SceneManagement
+            // move to the test phase
             SceneManager.LoadScene("DJVTest");
         }
     }
