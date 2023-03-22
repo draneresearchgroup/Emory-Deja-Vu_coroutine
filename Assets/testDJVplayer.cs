@@ -14,15 +14,11 @@ public class testDJVplayer : MonoBehaviour
     private int index = 0;
     public Material skyboxMaterial;
     public Material black;
-    public string[] videonames;
-    public VideoClip[] videos;
+    public string[] videonames = new string[n];
+    public VideoClip[] videos = new VideoClip[n];
+    
     public int frames = 30; // frame rate to change dynamically
-
     public GameObject cross;
-
-    // test variables
-    public string[] testvideonames = new string[n];
-    public VideoClip[] testvideos = new VideoClip[n];
     public GameObject UI;
 
     IEnumerator deja_vu_coroutine(int curr_index)
@@ -67,19 +63,11 @@ public class testDJVplayer : MonoBehaviour
         }    
     }
 
-    void load()
-    {
-        // load test
-        videonames = testvideonames;
-        videos = testvideos;
-    }
-
     // Start is called before the first frame update
     void Start()
     {   
         UI.SetActive(false);
         cross.SetActive(false);
-        load();
         vp = GetComponent<VideoPlayer>();
         
         StartCoroutine(deja_vu_coroutine(index));

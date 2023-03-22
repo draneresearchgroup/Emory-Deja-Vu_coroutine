@@ -14,14 +14,9 @@ public class studyDJVplayer : MonoBehaviour
     private int index = 0;
     public Material skyboxMaterial;
     public Material black;
-    public string[] videonames;
-    public VideoClip[] videos;
+    public string[] videonames = new string[n];
+    public VideoClip[] videos = new VideoClip[n];
     public int frames = 30; // frame rate to change dynamically
-
-
-    // study variables
-    public string[] studyvideonames = new string[n];
-    public VideoClip[] studyvideos = new VideoClip[n];
     public GameObject cross;
 
 
@@ -65,17 +60,10 @@ public class studyDJVplayer : MonoBehaviour
         }
     }
 
-    void load()
-    {
-        videonames = studyvideonames;
-        videos = studyvideos;
-    }
-
     // Start is called before the first frame update
     void Start()
     {   
         cross.SetActive(false);
-        load();
         vp = GetComponent<VideoPlayer>();
         
         StartCoroutine(deja_vu_coroutine(index));
