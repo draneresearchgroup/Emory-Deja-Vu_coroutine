@@ -32,11 +32,10 @@ public class testDJVplayer : MonoBehaviour
         Debug.Log("Video loaded, now playing:  " + videoname);
         vp.Play();
         yield return new WaitForSeconds(time);
+
         Debug.Log("Video finished playing");
         // play dark screen
         RenderSettings.skybox = (black);
-            
-        index++;
         // display crosshair image
         cross.SetActive(true);
         yield return new WaitForSeconds(3f);
@@ -54,6 +53,7 @@ public class testDJVplayer : MonoBehaviour
 
     void OnTrialEnd(){
         Debug.Log("OnTrialEnd reached");
+        index++;
         if(index < n) {
             StartCoroutine(deja_vu_coroutine(index));
         }

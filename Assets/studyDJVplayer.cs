@@ -8,7 +8,6 @@ public class studyDJVplayer : MonoBehaviour
 {
     
     // study phase:  show video, play audio, display ISI cross-hair, then move to next video.
-
     private static int n = 4; // number of video clips, 16 but putting 4 for the sake of testing
     private VideoPlayer vp;
     private int index = 0;
@@ -31,11 +30,10 @@ public class studyDJVplayer : MonoBehaviour
         Debug.Log("Video loaded, now playing:  " + videoname);
         vp.Play();
         yield return new WaitForSeconds(time);
+
         Debug.Log("Video finished playing");
         // play dark screen
         RenderSettings.skybox = (black);
-            
-        index++;
         // display crosshair image
         cross.SetActive(true);
         yield return new WaitForSeconds(3f);
@@ -47,6 +45,7 @@ public class studyDJVplayer : MonoBehaviour
     }
 
     void OnTrialEnd(){
+        index++;
         // for study phase — continue trials
         Debug.Log("OnTrialEnd reached");
         if(index < n) {
