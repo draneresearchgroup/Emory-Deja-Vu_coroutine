@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Video;
-using UnityEngine.SceneManagement;  //uncommented scene management package
+using UnityEngine.SceneManagement;
 
 public class studyDJVplayer : MonoBehaviour
 {
