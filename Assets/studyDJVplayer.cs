@@ -17,7 +17,9 @@ public class studyDJVplayer : MonoBehaviour
     public VideoClip[] videos = new VideoClip[n];
     public int frames = 30; // frame rate to change dynamically
     public GameObject cross;
-
+    
+    // resources for CSV parsing into string
+    // https://www.theappguruz.com/blog/unity-csv-parsing-unity
 
     IEnumerator deja_vu_coroutine(int curr_index)
     {
