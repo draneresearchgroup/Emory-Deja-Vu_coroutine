@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO.Ports;
 using UnityEngine;
 using UnityEngine.Video;
 using UnityEngine.SceneManagement;
@@ -15,6 +16,8 @@ public class studyDJVplayer : MonoBehaviour
     public Material black;
     public string[] videonames = new string[n];
     public VideoClip[] videos = new VideoClip[n];
+    public AudioClip[] audios = new AudioClip[n];
+
     public int frames = 30; // frame rate to change dynamically
     public GameObject cross;
     
@@ -25,12 +28,15 @@ public class studyDJVplayer : MonoBehaviour
     {
         string videoname = videonames[curr_index];
         vp.clip = videos[curr_index];
+        GetComponent<AudioSource>().clip = audios[curr_index];
+
         vp.Prepare();
         yield return new WaitForSeconds(3f);
         float time = (float) GetComponent<VideoPlayer>().clip.length;
         RenderSettings.skybox = skyboxMaterial;
         Debug.Log("Video loaded, now playing:  " + videoname);
         vp.Play();
+        GetComponent<AudioSource>().Play();
         yield return new WaitForSeconds(time);
 
         Debug.Log("Video finished playing");
@@ -65,6 +71,7 @@ public class studyDJVplayer : MonoBehaviour
     void Start()
     {   
         cross.SetActive(false);
+        AudioSource audio = GetComponent<AudioSource>();
         vp = GetComponent<VideoPlayer>();
         
         StartCoroutine(deja_vu_coroutine(index));
