@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.Video;
 using UnityEngine.SceneManagement;
 
+
 public class studyDJVplayer : MonoBehaviour
 {
     
@@ -17,26 +18,32 @@ public class studyDJVplayer : MonoBehaviour
     public string[] videonames = new string[n];
     public VideoClip[] videos = new VideoClip[n];
     public AudioClip[] audios = new AudioClip[n];
+    public AudioSource audio;
+    private AudioClip audioClip;
 
-    public int frames = 30; // frame rate to change dynamically
+    private int frames = 30; // frame rate to change dynamically  //making private for current iteration
     public GameObject cross;
-    
-    // resources for CSV parsing into string
-    // https://www.theappguruz.com/blog/unity-csv-parsing-unity
 
-    IEnumerator deja_vu_coroutine(int curr_index)
+    //CSV Reader and DJV Trials
+    DJV_CSVReader csv_reader;
+    DJV_Trial trial;
+    List<DJV_Trial> trials;
+    
+    IEnumerator deja_vu_coroutine(DJV_Trial trial)
     {
-        string videoname = videonames[curr_index];
-        vp.clip = videos[curr_index];
-        GetComponent<AudioSource>().clip = audios[curr_index];
+
+        string videoname = trial.videoName;
+        vp.clip = Resources.Load<VideoClip>(trial.videoReference) as VideoClip;
+        audio.clip = audios[trial.audioReference]; //for some reason audio player wont load in audio source from resources.load so will instead pass an int value.
+
 
         vp.Prepare();
         yield return new WaitForSeconds(3f);
+        audio.Play();
         float time = (float) GetComponent<VideoPlayer>().clip.length;
         RenderSettings.skybox = skyboxMaterial;
         Debug.Log("Video loaded, now playing:  " + videoname);
         vp.Play();
-        GetComponent<AudioSource>().Play();
         yield return new WaitForSeconds(time);
 
         Debug.Log("Video finished playing");
@@ -58,7 +65,7 @@ public class studyDJVplayer : MonoBehaviour
         Debug.Log("OnTrialEnd reached");
         if(index < n) {
             Debug.Log("Loading new video...");
-            StartCoroutine(deja_vu_coroutine(index));
+            StartCoroutine(deja_vu_coroutine(trials[index]));
         }
 
         else {
@@ -70,11 +77,13 @@ public class studyDJVplayer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {   
+        csv_reader = new DJV_CSVReader();
+        trials = csv_reader.ReadTrialCSV("test_version");
         cross.SetActive(false);
         AudioSource audio = GetComponent<AudioSource>();
         vp = GetComponent<VideoPlayer>();
         
-        StartCoroutine(deja_vu_coroutine(index));
+        StartCoroutine(deja_vu_coroutine(trials[index]));
     }
 
    void Update()
