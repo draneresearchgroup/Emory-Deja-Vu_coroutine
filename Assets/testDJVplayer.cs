@@ -10,22 +10,31 @@ public class testDJVplayer : MonoBehaviour
     
     // test phase: show video (no audio), participant response block (UI), then move to next video
 
-    private static int n = 4; // number of video clips, 16 but putting 4 for the sake of testing
+    private static int n = 4; // number of video clips, 32 but putting 4 for the sake of testing
     private VideoPlayer vp;
     private int index = 0;
     public Material skyboxMaterial;
     public Material black;
-    public string[] videonames = new string[n];
-    public VideoClip[] videos = new VideoClip[n];
+    // public string[] videonames = new string[n];
+    // public VideoClip[] videos = new VideoClip[n];
     
-    public int frames = 30; // frame rate to change dynamically
+    private int frames = 30; // frame rate to change dynamically
     public GameObject cross;
     public GameObject UI;
 
-    IEnumerator deja_vu_coroutine(int curr_index)
+     //CSV Reader and DJV Trials
+    DJV_CSVReader csv_reader;
+    DJV_Trial trial;
+    List<DJV_Trial> trials;
+
+    IEnumerator deja_vu_coroutine(DJV_Trial trial)
     {
-        string videoname = videonames[curr_index];
-        vp.clip = videos[curr_index];
+
+        string videoname = trial.videoName;
+        vp.clip = Resources.Load<VideoClip>(trial.videoReference) as VideoClip;
+
+
+
         vp.Prepare();
         yield return new WaitForSeconds(3f);
         float time = (float) GetComponent<VideoPlayer>().clip.length;
@@ -56,7 +65,7 @@ public class testDJVplayer : MonoBehaviour
         Debug.Log("OnTrialEnd reached");
         index++;
         if(index < n) {
-            StartCoroutine(deja_vu_coroutine(index));
+            StartCoroutine(deja_vu_coroutine(trials[index]));
         }
         else {
             // switch to end scene
@@ -67,11 +76,13 @@ public class testDJVplayer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {   
+        csv_reader = new DJV_CSVReader();
+        trials = csv_reader.ReadTrialCSV("test_version");
         UI.SetActive(false);
         cross.SetActive(false);
         vp = GetComponent<VideoPlayer>();
         
-        StartCoroutine(deja_vu_coroutine(index));
+        StartCoroutine(deja_vu_coroutine(trials[index])); //maybe not index. Maybe will dynamically change to other scene for simplicity
     }
 
    void Update()

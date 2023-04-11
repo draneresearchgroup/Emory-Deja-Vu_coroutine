@@ -19,7 +19,6 @@ public class studyDJVplayer : MonoBehaviour
     public VideoClip[] videos = new VideoClip[n];
     public AudioClip[] audios = new AudioClip[n];
     public AudioSource audio;
-    private AudioClip audioClip;
 
     private int frames = 30; // frame rate to change dynamically  //making private for current iteration
     public GameObject cross;
@@ -70,6 +69,8 @@ public class studyDJVplayer : MonoBehaviour
 
         else {
             // move to the test phase
+
+            //Will move to in between phase instead. Will load in UI for this.
             SceneManager.LoadScene("DJVTest");
         }
     }
