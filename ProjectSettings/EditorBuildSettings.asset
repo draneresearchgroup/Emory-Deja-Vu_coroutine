@@ -4,7 +4,16 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/ParticipantResponse.unity
+    guid: 43d87f47767e58648948e5c236cec600
+  - enabled: 1
+    path: Assets/Scenes/endScene.unity
+    guid: c81388891feb7454ab145a52e40b792b
+  - enabled: 1
+    path: Assets/Scenes/DJVTest.unity
+    guid: b3cd1360d3c91da4aa558a94c180b664
   m_configObjects:
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 7babf223637574ec9b40b76c58e448f6, type: 2}
     com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 3ed98c6cec065e5479381a70af21f929, type: 2}

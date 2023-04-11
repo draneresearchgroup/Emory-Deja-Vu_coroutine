@@ -46,15 +46,9 @@ public class testDJVplayer : MonoBehaviour
         Debug.Log("Video finished playing");
         // play dark screen
         RenderSettings.skybox = (black);
-        // display crosshair image
-        cross.SetActive(true);
-        yield return new WaitForSeconds(3f);
-        cross.SetActive(false);
 
-        // test phase: run UI (mock)
-        UI.SetActive(true);
-        yield return new WaitForSeconds(5f);
-        UI.SetActive(false);
+        yield return new WaitForSeconds(3f);
+
         
         // trial block ends
         OnTrialEnd();
@@ -64,8 +58,9 @@ public class testDJVplayer : MonoBehaviour
     void OnTrialEnd(){
         Debug.Log("OnTrialEnd reached");
         index++;
+        PlayerPrefs.SetInt("Test_Index", index);
         if(index < n) {
-            StartCoroutine(deja_vu_coroutine(trials[index]));
+            SceneManager.LoadScene("ParticipantResponse");
         }
         else {
             // switch to end scene
@@ -81,6 +76,16 @@ public class testDJVplayer : MonoBehaviour
         UI.SetActive(false);
         cross.SetActive(false);
         vp = GetComponent<VideoPlayer>();
+
+
+        if(PlayerPrefs.HasKey("Test_Index"))
+        {
+            index = PlayerPrefs.GetInt("Test_Index", index);
+        }
+        else
+        {
+            index = 0;
+        }
         
         StartCoroutine(deja_vu_coroutine(trials[index])); //maybe not index. Maybe will dynamically change to other scene for simplicity
     }
