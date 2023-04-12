@@ -46,7 +46,7 @@ public class InstructionUI : MonoBehaviour
             instruction.text = "Please press continue to begin the first study phase.";
         else if (updater == 7){
             DataPrinter.sendttlPulse(5);
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene("DJVStudy");
         }
             
 

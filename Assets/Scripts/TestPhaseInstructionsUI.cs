@@ -12,13 +12,6 @@ public class TestPhaseInstructionsUI : MonoBehaviour
     void Start()
     {
         PlayerPrefs.SetInt("Condition", 1); ///changes to test condition
-        PlayerPrefs.SetInt("counter", 32);// players should be displayed 32 scenes in this condition  
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 
     public void cycleText()
@@ -31,7 +24,7 @@ public class TestPhaseInstructionsUI : MonoBehaviour
         else if (updater == 3)
             instruction.text = "After you view a tour, you will be asked several questions about it.";
         else if (updater == 4)
-            instruction.text = "First, you will be asked if the test scene prompted you to feel a sense of déjà vu (the feeling of having experienced something before without knowing why and despite knowing that the current situation is new). ";
+            instruction.text = "First, you will be asked if the test scene prompted you to feel a sense of deja vu (the feeling of having experienced something before without knowing why and despite knowing that the current situation is new). ";
         else if (updater == 5)
             instruction.text = "You will indicate Yes or No for this question.";
         else if (updater == 6)
@@ -47,7 +40,7 @@ public class TestPhaseInstructionsUI : MonoBehaviour
         else if (updater == 11)
             instruction.text = "Please note that there will be no sound during the test phase.";
         else if (updater == 12)
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene("DJVTest");
 
     }
 }

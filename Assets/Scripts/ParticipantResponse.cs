@@ -57,6 +57,8 @@ public class ParticipantResponse : MonoBehaviour
         updater += 1;
         DataPrinter.WriteToFile("Sense of Turn: YES \n");
 
+        //write to file turn predict y ;
+        //disable both buttons
     }
 
     public void turnPredictionN()
@@ -107,7 +109,7 @@ public class ParticipantResponse : MonoBehaviour
     public void endParticipantResponse()
     {
         DataPrinter.WriteToFile("\n" + "============================================" + "\n");
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene("DJVTest");
     }
 
     public void updateIt()

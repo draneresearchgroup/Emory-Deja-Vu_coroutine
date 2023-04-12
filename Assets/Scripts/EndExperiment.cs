@@ -13,7 +13,6 @@ public class EndExperiment : MonoBehaviour
     // Update is called once per frame
    public void endExperiment()
     {
-        UnityEditor.EditorApplication.isPlaying = false;
         Application.Quit();
     }
 }

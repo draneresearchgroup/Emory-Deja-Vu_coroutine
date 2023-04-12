@@ -71,7 +71,7 @@ public class studyDJVplayer : MonoBehaviour
             // move to the test phase
 
             //Will move to in between phase instead. Will load in UI for this.
-            SceneManager.LoadScene("DJVTest");
+            SceneManager.LoadScene("TestPhaseInstructions");
         }
     }
 

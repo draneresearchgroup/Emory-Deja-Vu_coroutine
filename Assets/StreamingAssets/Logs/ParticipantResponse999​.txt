@@ -1,0 +1,55 @@
+Data from Participants
+Virtual Reality Deja Vu Virtual Tour Paradigm:
+Participant:999​
+Version:
+
+
+==========================================================
+Virtual Reality Deja Vu Virtual Tour Paradigm:
+Participant:999​
+Version:1
+
+
+==========================================================
+Virtual Reality Deja Vu Virtual Tour Paradigm:
+Participant:999​
+Version:1
+
+
+==========================================================
+Virtual Reality Deja Vu Virtual Tour Paradigm:
+Participant:999​
+Version:1
+
+
+==========================================================
+Virtual Reality Deja Vu Virtual Tour Paradigm:
+Participant:999​
+Version:1
+
+
+==========================================================
+Virtual Reality Deja Vu Virtual Tour Paradigm:
+Participant:999​
+Version:1
+
+
+==========================================================
+Sense of Deja Vu: YES 
+Sense of Turn: YES 
+Prediction of Turn: Left 
+Feeling of Familiarity: YES 
+
+============================================
+Sense of Deja Vu: NO 
+Sense of Turn: NO 
+Prediction of Turn: Right 
+Feeling of Familiarity: NO 
+
+============================================
+Sense of Deja Vu: YES 
+Sense of Turn: NO 
+Prediction of Turn: Left 
+Feeling of Familiarity: NO 
+
+============================================

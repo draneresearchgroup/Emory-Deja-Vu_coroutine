@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class button_responder : MonoBehaviour
 {
@@ -10,51 +11,41 @@ public class button_responder : MonoBehaviour
     public TMP_Text participant_input;
 
     public TMP_Dropdown version;
-    public TMP_Dropdown site;
+    public TMP_Dropdown com;
 
-    public Toggle vr_checkbox;
-    public Toggle eeg_checkbox;
 
     public string session_text;
     public string participant_text;
+    public string version_text;
+    private int participant_num;
+    private int session_num;
+    private int version_num;
+    private string comport_text;
+    private DataPrint DataPrinter;  // to write file info
+ 
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
 
     // Report the information stored in each input field.
     public void buttonreponse() {
+        
+        PlayerPrefs.DeleteAll();
         session_text = session_input.text;
         participant_text = participant_input.text;
+        version_text = version.options[version.value].text;
+        comport_text = com.options[com.value].text;
+        Debug.Log(version_text);
 
         Debug.Log("Participant Name: " + participant_text
                     + "\nSession name: " + session_text);
 
         Debug.Log("Version number: " + version.options[version.value].text);
-        Debug.Log("Site: " + site.options[site.value].text);
+        Debug.Log("Site: " + com.options[com.value].text);
 
+        DataPrinter = new DataPrint();
+        DataPrinter.initializeDataPrinter(participant_text, version_text, comport_text);
 
-        if(vr_checkbox.isOn) {
-            Debug.Log("vr enabled");
-        } else {
-            Debug.Log("vr disabled");
-        }
-
-
-        if(eeg_checkbox.isOn) {
-            Debug.Log("EEG enabled");
-        } else {
-            Debug.Log("EEG disabled");
-        }
+        SceneManager.LoadScene("Instructions");
 
     }
 

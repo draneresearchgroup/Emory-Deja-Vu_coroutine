@@ -9,32 +9,46 @@ using System.IO.Ports;
 public class DataPrint : MonoBehaviour
 {
     private string myFilePath;
-    public  int participant_num;
-    public int version;
-    public  int block_num;
-    private static int v; //version static
-    private static int b; //block static
-    private static int pnum; //participant num static
+    private  string participant_num;
+    private string version;
+    private  string block_num;
+    private static string v; //version static
+    private static string b; //block static
+    private static string pnum; //participant num static
+    private static string the_com;
+
    
    
    //SERIAL PORT STUFF
     public SerialPort sp;
     float next_time;
 
-    void Start()
+    public void initializeDataPrinter(string participant_num, string version_num, string set_com)
     {
-        serialportEnabling();
-        v = version;
+        v = version_num;
         pnum = participant_num;
-        b = block_num;
+        the_com = set_com;
         Directory.CreateDirectory(Application.streamingAssetsPath + "/Logs/");
+        serialportEnabling();
         myFilePath = Application.streamingAssetsPath + "/Logs/" + "ParticipantResponse"+pnum + ".txt";
-        WriteToFile("Virtual Reality Deja Vu Virtual Tour Paradigm:" + "\n"+ "Participant:" + participant_num + "\n"+ "Version:"+version+"\n"+"Block:" + block_num + "\n");
-        WriteToFile("Virtual Reality Deja Vu Virtual Tour Paradigm:" + "\n"+ "Participant:" + participant_num + "\n"+ "Version:"+version+"\n"+"Block:" + block_num + "\n");
+        WriteToFile("Virtual Reality Deja Vu Virtual Tour Paradigm:" + "\n"+ "Participant:" + pnum + "\n"+ "Version:"+v+"\n"+ "\n");
         WriteToFile("\n" + "==========================================================" + "\n");
 
-
     }
+
+    // void Start()
+    // {
+    //     serialportEnabling();
+    //     v = version;
+    //     pnum = participant_num;
+    //     b = block_num;
+    //     Directory.CreateDirectory(Application.streamingAssetsPath + "/Logs/");
+    //     myFilePath = Application.streamingAssetsPath + "/Logs/" + "ParticipantResponse"+pnum + ".txt";
+    //     WriteToFile("Virtual Reality Deja Vu Virtual Tour Paradigm:" + "\n"+ "Participant:" + participant_num + "\n"+ "Version:"+version+"\n"+"Block:" + block_num + "\n");
+    //     WriteToFile("Virtual Reality Deja Vu Virtual Tour Paradigm:" + "\n"+ "Participant:" + participant_num + "\n"+ "Version:"+version+"\n"+"Block:" + block_num + "\n");
+    //     WriteToFile("\n" + "==========================================================" + "\n");
+
+    // }
 
   
     public void WriteToFile(string s)
@@ -58,7 +72,6 @@ public class DataPrint : MonoBehaviour
     }
 
     public void sendttlPulse(int pulseCount){
-        string the_com = "COM3";
         sp = new SerialPort("\\\\.\\" + the_com, 9600);
         if(!sp.IsOpen)   sp.Open();
         if(sp.IsOpen)  sp.Write(pulseCount.ToString());
@@ -67,18 +80,9 @@ public class DataPrint : MonoBehaviour
 
 
     public void serialportEnabling(){
-        string the_com="";
+        string this_com=the_com;
         next_time = Time.time;
         
-        foreach (string mysps in SerialPort.GetPortNames())
-        {
-            print(mysps);
-            if (mysps != "COM1")
-            {
-                the_com = mysps;
-                break;
-            }
-        }
 
         sp = new SerialPort("\\\\.\\" + the_com, 9600);
         if (!sp.IsOpen)
@@ -89,8 +93,7 @@ public class DataPrint : MonoBehaviour
             sp.Handshake = Handshake.None;
             if (sp.IsOpen) { print("Open"); }
         }
-
-
     }
 
 }
+
