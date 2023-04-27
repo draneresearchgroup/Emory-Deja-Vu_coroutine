@@ -1,0 +1,17 @@
+videoName,videoNum,videoReference,audioReference,stopTime,rotation
+theater_left,47,DJVVideos/theater_left,47,5,0
+dancefloor_left,12,DJVVideos/dancefloor_left,12,9,-174.111
+highway_left,49,DJVVideos/highway_left,49,10,0
+votingcenter_left,10,DJVVideos/votingcenter_left,10,11,-269.487
+logcabin_left,62,DJVVideos/logcabin_left,62,8,0
+steamshower_left,52,DJVVideos/steamshower_left,52,8,-92.599
+pond_left,20,DJVVideos/pond_left,20,9,133.495
+kitchen_left,5,DJVVideos/kitchen_left,5,8,-86.594
+laundromat_right,3,DJVVideos/laundromat_right,3,10,-91.56
+desert_right,13,DJVVideos/desert_right,13,10,-82.822
+clothingstore_right,61,DJVVideos/clothingstore_right,61,7,214.997
+courtroom_right,15,DJVVideos/courtroom_right,15,9,-89.133
+neighborhood_right,33,DJVVideos/neighborhood_right,33,8,-88.645
+street_right,2,DJVVideos/street_right,2,13,0
+basketballcourt_right,32,DJVVideos/basketballcourt_right,32,4,-265.738
+hottub_right,11,DJVVideos/hottub_right,11,9,0

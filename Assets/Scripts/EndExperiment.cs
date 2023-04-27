@@ -13,6 +13,7 @@ public class EndExperiment : MonoBehaviour
     // Update is called once per frame
    public void endExperiment()
     {
+        Debug.Log("Quit");
         Application.Quit();
     }
 }

@@ -1,0 +1,17 @@
+videoName,videoNum,videoReference,audioReference,stopTime,rotation
+ballroom_left,64,DJVVideos/ballroom_left,64,8,-89.591
+plane_left,1,DJVVideos/plane_left,1,11,180.179
+foyer_left,46,DJVVideos/foyer_left,46,5,-89.098
+bathroomtub_left,28,DJVVideos/bathroomtub_left,28,9,-153.803
+museum_left,25,DJVVideos/museum_left,25,8,92.997
+attic_left,53,DJVVideos/attic_left,53,6,93.797
+officespace_left,27,DJVVideos/officespace_left,27,9,84.316
+trailerpark_left,63,DJVVideos/trailerpark_left,63,5,93.274
+graveyard_right,37,DJVVideos/graveyard_right,37,9,-177.057
+shoppingmall_right,7,DJVVideos/shoppingmall_right,7,10,-90
+dressing_room_right,42,DJVVideos/dressing_room_right,42,9,-174.838
+classroom_right,19,DJVVideos/classroom_right,19,10,-88.823
+supermarket_right,50,DJVVideos/supermarket_right,50,9,-183.299
+marketplace_right,23,DJVVideos/marketplace_right,23,8,0
+playground_right,8,DJVVideos/playground_right,8,10,-128.427
+trainstation_right,16,DJVVideos/trainstation_right,16,13,0

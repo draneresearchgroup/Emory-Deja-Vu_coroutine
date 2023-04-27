@@ -1,0 +1,49 @@
+Data from Participants
+SceneNum:6
+Scene:subwaycar_test_cue_workshop_left
+Order:13
+=======================================
+SceneNum:46
+Scene:foyer_test_cue_hallway_left
+Order:0
+=======================================
+Sense of Deja Vu: NO 
+Sense of Turn: NO 
+Prediction of Turn: Right 
+Feeling of Familiarity: NO 
+Recall Response:
+
+============================================
+SceneNum:28
+Scene:bathroomtub_test_cue_bedroom_left
+Order:1
+=======================================
+Sense of Deja Vu: NO 
+Sense of Turn: NO 
+Prediction of Turn: Right 
+Feeling of Familiarity: NO 
+Recall Response:
+
+============================================
+SceneNum:1
+Scene:plane_test_cue_library_left
+Order:2
+=======================================
+Sense of Deja Vu: NO 
+Sense of Turn: NO 
+Prediction of Turn: Right 
+Feeling of Familiarity: NO 
+Recall Response:
+
+============================================
+SceneNum:64
+Scene:ballroom_testcue_weddingtent_left
+Order:3
+=======================================
+Sense of Deja Vu: NO 
+Sense of Turn: NO 
+Prediction of Turn: Right 
+Feeling of Familiarity: NO 
+Recall Response:
+
+============================================

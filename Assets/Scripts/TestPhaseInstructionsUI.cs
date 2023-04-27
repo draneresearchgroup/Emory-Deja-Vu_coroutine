@@ -7,7 +7,9 @@ using UnityEngine.SceneManagement;
 public class TestPhaseInstructionsUI : MonoBehaviour
 {
     public Text instruction;
+    public static List<DJV_Trial> testList;
     int updater = 0;
+    DJV_CSVReader csv_reader;
     // Start is called before the first frame update
     void Start()
     {
@@ -40,7 +42,14 @@ public class TestPhaseInstructionsUI : MonoBehaviour
         else if (updater == 11)
             instruction.text = "Please note that there will be no sound during the test phase.";
         else if (updater == 12)
+        {  // 
+            csv_reader = new DJV_CSVReader();
+            string version_name = PlayerPrefs.GetString("Test");
+            testList = csv_reader.ReadTestTrialCSV(version_name);
             SceneManager.LoadScene("DJVTest");
+
+        }
+
 
     }
 }

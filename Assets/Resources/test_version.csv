@@ -1,5 +1,5 @@
-﻿videoName,videoNum,videoReference,audioReference
-1SL_,1,DJVVideos/1SL_,0
-9SL,9,DJVVideos/9SL,1
-9TL,9,DJVVideos/9TL,2
-16SL,16,DJVVideos/16SL,3
+﻿videoName,videoNum,videoReference,audioReference,stopTime,rotation
+ballroom_testcue_weddingtent_left,64,DJVVideos/ballroom_test_cue_weddingtent_left,1,8,-89.591
+plane_test_cue_library_left,1,DJVVideos/plane_test_cue_library_left,1,11,180.179
+foyer_test_cue_hallway_left,46,DJVVideos/foyer_test_cue_hallway_left,1,5,-89.098
+bathroomtub_test_cue_bedroom_left,28,DJVVideos/bathroomtub_test_cue_bedroom_left,1,9,-153.803

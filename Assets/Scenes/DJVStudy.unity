@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.64930594, g: 0.73048174, b: 0.7843585, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -232,19 +232,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3510784436320035999, guid: b7685163c3086984fbf05d50e102f6f5, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.001559773
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3510784436320035999, guid: b7685163c3086984fbf05d50e102f6f5, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3510784436320035999, guid: b7685163c3086984fbf05d50e102f6f5, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.9999988
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3510784436320035999, guid: b7685163c3086984fbf05d50e102f6f5, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3510784436320035999, guid: b7685163c3086984fbf05d50e102f6f5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -252,7 +252,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3510784436320035999, guid: b7685163c3086984fbf05d50e102f6f5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 180.179
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3510784436320035999, guid: b7685163c3086984fbf05d50e102f6f5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -265,6 +265,11 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 480638740, guid: b7685163c3086984fbf05d50e102f6f5, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: b7685163c3086984fbf05d50e102f6f5, type: 3}
+--- !u!20 &628715352 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 2379217234708689657, guid: b7685163c3086984fbf05d50e102f6f5, type: 3}
+  m_PrefabInstance: {fileID: 628715351}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &793658014 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6879705478150839268, guid: b7685163c3086984fbf05d50e102f6f5, type: 3}
@@ -548,23 +553,75 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skyboxMaterial: {fileID: 2100000, guid: 6a2ca9c7af6424a419ce38f733ef4027, type: 2}
-  black: {fileID: 2100000, guid: 91c93233f76084157b830d2afd7da04a, type: 2}
-  videonames:
-  - 1SL_
-  - 9SL
-  - 9TL
-  - 16SL
-  videos:
-  - {fileID: 32900000, guid: 581b8f47c888a496cb2ce0cb09ddb232, type: 3}
-  - {fileID: 32900000, guid: fba63a8cf3ab14c35b50fbafcded19e3, type: 3}
-  - {fileID: 32900000, guid: 24f2261b633af4c23bb4e1a8854f2f2a, type: 3}
-  - {fileID: 32900000, guid: f0026f0656ab04fbeaa05696f6d189d1, type: 3}
+  black: {fileID: 2100000, guid: 03513b11f7957b447bb19f3fdbd63b76, type: 2}
   audios:
-  - {fileID: 8300000, guid: 1641324695d355b4a9bfa445e7c0eff1, type: 3}
-  - {fileID: 8300000, guid: a1359ee84c6502c448e792ee39c3f13d, type: 3}
-  - {fileID: 8300000, guid: 06e92047d73a53947a74ecca69cdfd7a, type: 3}
+  - {fileID: 8300000, guid: 60c5885fb69fce84dbe758215f0d3123, type: 3}
+  - {fileID: 8300000, guid: 60c5885fb69fce84dbe758215f0d3123, type: 3}
+  - {fileID: 8300000, guid: 04d60a99f844da047a15c2c4f2be65cd, type: 3}
+  - {fileID: 8300000, guid: 366992ae677d60b4c8aa594316c415af, type: 3}
+  - {fileID: 8300000, guid: ac85b8079eeb7bb4499603ebae86009e, type: 3}
+  - {fileID: 8300000, guid: dc9af04f44fb3dd47bd8cf05f1361ab2, type: 3}
+  - {fileID: 8300000, guid: b5034939fd5bae94bbd402a446b75ffe, type: 3}
+  - {fileID: 8300000, guid: 2fa2ede15f044a0459ac5b01260ae51d, type: 3}
+  - {fileID: 8300000, guid: 2dbecb5a84e29224d91d37216dc3d8ba, type: 3}
+  - {fileID: 8300000, guid: 471bfd165107c4e4b82f9816db16e586, type: 3}
+  - {fileID: 8300000, guid: 393580b103eb72a40998adc415bf3149, type: 3}
+  - {fileID: 8300000, guid: fbd8414027c92b8439e4bea9783bb008, type: 3}
+  - {fileID: 8300000, guid: 416101804bde1a1488cf46a2348518c1, type: 3}
+  - {fileID: 8300000, guid: a93b1fcbba38e4f41b6a8824f864813d, type: 3}
+  - {fileID: 8300000, guid: 23d8f09ad03733c4b87fbf55ea7b8c16, type: 3}
+  - {fileID: 8300000, guid: e60078fd854ef42488c44c6f46ae6857, type: 3}
+  - {fileID: 8300000, guid: 3d00a4f87b82af84a8d94430a62ba632, type: 3}
+  - {fileID: 8300000, guid: 15a2fb605c33c8a418148a97267da5b2, type: 3}
+  - {fileID: 8300000, guid: ebc75ddab519daf4ba930bf1d8d2abd0, type: 3}
+  - {fileID: 8300000, guid: 75e24612f09b01f41a17c1d39445f477, type: 3}
+  - {fileID: 8300000, guid: 28db240098ff9314fb72be2d07d0f112, type: 3}
+  - {fileID: 8300000, guid: de7be46cbbc7ffe4fa77a462980d7bd6, type: 3}
+  - {fileID: 8300000, guid: 6b731f6641564d0409eabf2e2feb3418, type: 3}
+  - {fileID: 8300000, guid: bcc1ab4c31639814ea6004c324222299, type: 3}
+  - {fileID: 8300000, guid: e39c54480a5dbf746bba02391fd25b60, type: 3}
+  - {fileID: 8300000, guid: 91774108cfcb3884285f1dde068f298e, type: 3}
+  - {fileID: 8300000, guid: 8e948b2309451e645bef35353d97db04, type: 3}
+  - {fileID: 8300000, guid: 86d01d4b4810c71409c9a11574f13dba, type: 3}
+  - {fileID: 8300000, guid: 520a1d3cc002d7340984d890aacc0dea, type: 3}
+  - {fileID: 8300000, guid: 0fb813de6f6e3394494f63e92543cefb, type: 3}
   - {fileID: 8300000, guid: b65a790b083eea94bbf3d8ca6cddc7a0, type: 3}
+  - {fileID: 8300000, guid: 511909ffdbc933540a5a8694f8dbb9c1, type: 3}
+  - {fileID: 8300000, guid: b1174f2d159897b4fb474564f21ae204, type: 3}
+  - {fileID: 8300000, guid: eb9accabbd309d044819ad2300751889, type: 3}
+  - {fileID: 8300000, guid: 2cc2ce818f6462540a5d6d98e84f69a6, type: 3}
+  - {fileID: 8300000, guid: e652f866b9f43664cb8ebfa25bb3abe5, type: 3}
+  - {fileID: 8300000, guid: 38700a91aab455a44b81665c11ee52bd, type: 3}
+  - {fileID: 8300000, guid: 2ddbda183584893429af4b54e341e1d0, type: 3}
+  - {fileID: 8300000, guid: 18c11a061d69b2e489f9736dd559eb33, type: 3}
+  - {fileID: 8300000, guid: 2f1cec5492a3999478cb47c41cb5ee50, type: 3}
+  - {fileID: 8300000, guid: ca402f4cdc9e7d640977268891ad371f, type: 3}
+  - {fileID: 8300000, guid: 1641324695d355b4a9bfa445e7c0eff1, type: 3}
+  - {fileID: 8300000, guid: af01d6b632a64754e87e8a95828cd311, type: 3}
+  - {fileID: 8300000, guid: d28be030f8aad2d47ac62fbbeded4658, type: 3}
+  - {fileID: 8300000, guid: c559d795419575245befbb95d02bbd95, type: 3}
+  - {fileID: 8300000, guid: 4e55fa8e00d208e4481a44d21cf56bbb, type: 3}
+  - {fileID: 8300000, guid: a7f7a177291cbce4fab43472caff5cbe, type: 3}
+  - {fileID: 8300000, guid: 88e00d8eca4c3f649a88c3591bdd9b2d, type: 3}
+  - {fileID: 8300000, guid: 5c2b5f2d04c54a844a82abacac4391ad, type: 3}
+  - {fileID: 8300000, guid: c3f381732fce2bd419723c173e50e1c0, type: 3}
+  - {fileID: 8300000, guid: b9efd49080ccb754985672c465e79f4b, type: 3}
+  - {fileID: 8300000, guid: 0764e05b67d5033438717e2fc6e18b03, type: 3}
+  - {fileID: 8300000, guid: 3f12b86f0e82c8841a3baa590deeeda9, type: 3}
+  - {fileID: 8300000, guid: a1359ee84c6502c448e792ee39c3f13d, type: 3}
+  - {fileID: 8300000, guid: 5ddd81d4e0eacde4a911a74c6b8de8b7, type: 3}
+  - {fileID: 8300000, guid: e90786510f9cff4459c0fc4eb0313609, type: 3}
+  - {fileID: 8300000, guid: 2536aff8f479b6e4b8ae2be266bf04e5, type: 3}
+  - {fileID: 8300000, guid: 86e4fd60da864974fa8c4cc94655984e, type: 3}
+  - {fileID: 8300000, guid: 9d48a4a460c09a74f839738c521347b8, type: 3}
+  - {fileID: 8300000, guid: 0ae232ccbcc4e0e4696a8bf0343dfb54, type: 3}
+  - {fileID: 8300000, guid: 72882ec292136fb488a5a94b3bb95b10, type: 3}
+  - {fileID: 8300000, guid: b651b0473795e53488846ecd6c0de735, type: 3}
+  - {fileID: 8300000, guid: 5c236e7cb9bca9a4685bb1026d3c9621, type: 3}
+  - {fileID: 8300000, guid: 1903389acbc455e4f9a53b840c742e89, type: 3}
+  - {fileID: 8300000, guid: 06e92047d73a53947a74ecca69cdfd7a, type: 3}
   audio: {fileID: 793658018}
+  VRplayer: {fileID: 793658014}
   cross: {fileID: 2091088254}
 --- !u!328 &1359985952
 VideoPlayer:
@@ -777,7 +834,7 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 1
-  m_Camera: {fileID: 41211089}
+  m_Camera: {fileID: 628715352}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1

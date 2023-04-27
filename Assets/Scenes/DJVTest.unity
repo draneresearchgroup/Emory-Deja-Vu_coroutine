@@ -265,6 +265,47 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 480638740, guid: b7685163c3086984fbf05d50e102f6f5, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: b7685163c3086984fbf05d50e102f6f5, type: 3}
+--- !u!1 &239292095 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6879705478150839268, guid: b7685163c3086984fbf05d50e102f6f5, type: 3}
+  m_PrefabInstance: {fileID: 239292094}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &239292096 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4273509809266102557, guid: b7685163c3086984fbf05d50e102f6f5, type: 3}
+  m_PrefabInstance: {fileID: 239292094}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: caff514de9b15ad48ab85dcff5508221, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &239292097 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6899661379222689356, guid: b7685163c3086984fbf05d50e102f6f5, type: 3}
+  m_PrefabInstance: {fileID: 239292094}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: caff514de9b15ad48ab85dcff5508221, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &239292098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 239292095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a867d9c1febcc3b49a80886b746a00b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controllerL: {fileID: 239292097}
+  controllerR: {fileID: 239292096}
 --- !u!1 &773182978
 GameObject:
   m_ObjectHideFlags: 0
@@ -333,6 +374,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skyboxMaterial: {fileID: 2100000, guid: 6a2ca9c7af6424a419ce38f733ef4027, type: 2}
   black: {fileID: 2100000, guid: 03513b11f7957b447bb19f3fdbd63b76, type: 2}
+  VRplayer: {fileID: 239292095}
   cross: {fileID: 2091088254}
   UI: {fileID: 1805035272}
 --- !u!4 &773182981

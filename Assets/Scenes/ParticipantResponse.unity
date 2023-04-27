@@ -1005,7 +1005,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3510784436320035999, guid: b7685163c3086984fbf05d50e102f6f5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.81
+      value: 0.86
       objectReference: {fileID: 0}
     - target: {fileID: 3510784436320035999, guid: b7685163c3086984fbf05d50e102f6f5, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1162,7 +1162,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0

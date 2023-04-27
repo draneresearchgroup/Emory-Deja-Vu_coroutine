@@ -1,0 +1,17 @@
+videoName,videoNum,videoReference,audioReference,stopTime,rotation
+banquethall_right,30,DJVVideos/banquethall_right,30,12,-102.089
+picnicarea_right,29,DJVVideos/picnicarea_right,29,11,93.551
+music_studio_right,39,DJVVideos/music_studio_right,39,7,99.52
+aquarium_right,41,DJVVideos/aquarium_right,41,5,-173.6
+gazebo_right,24,DJVVideos/gazebo_right,24,10,25.585
+lighthouse_right,58,DJVVideos/lighthouse_right,58,6,92.832
+dock_right,26,DJVVideos/dock_right,26,10,-115.549
+mechanic_shop_right,44,DJVVideos/mechanic_shop_right,44,9,-173.954
+parking_garage_left,48,DJVVideos/parking_garage_left,48,5,-47.877
+cellar_left,17,DJVVideos/cellar_left,17,7,-178.707
+prison_left,60,DJVVideos/prison_left,60,4,57.998
+salon_left,31,DJVVideos/salon_left,31,12,0
+courtyard_left,43,DJVVideos/courtyard_left,43,4,-178.148
+conferencehall_left,9,DJVVideos/conferencehall_left,9,7,-85.727
+flowershop_left,36,DJVVideos/flowershop_left,36,4,-46.422
+terrace_left,59,DJVVideos/terrace_left,59,7,90.839
